@@ -14,6 +14,8 @@ const body = document.querySelector('body');
 const questContainer = document.querySelector('#question-container');
 const questElem = document.querySelector('#question');
 const ansBtnElem = document.querySelector('#answer-buttons');
+const correctAnsElem = document.querySelector('#right-answers');
+const shareScore = document.querySelector('.sharescore');
 
 
 let countRightAnswers = 0;
@@ -36,6 +38,9 @@ function startGame() {
     body.classList.remove('correct');
     body.classList.remove('wrong');
     countRightAnswers = 0;
+    correctAnsElem.classList.add('hide');
+    correctAnsElem.classList.remove('high');
+    correctAnsElem.classList.remove('low');
 
     setNextQuestion()
     
@@ -77,20 +82,31 @@ function selectAnswer(e) {
     Array.from(ansBtnElem.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     });
+
+    if (selectedBtn.dataset = correct) {
+        countRightAnswers++;
+     // +1, change it if you need +10, +25 etc
+     }
+
     if(shuffledQuestions.length > currentQuestionIndex + 1){
         nextBtn.classList.remove('hide');
     }else{
         nextBtn.classList.add('hide');
         startBtn.innerText = "Restart"
         startBtn.classList.remove('hide');
-        document.querySelector('#right-answers').innerHTML = 
+
+            if(countRightAnswers > (questions.length/4)*3){
+                correctAnsElem.classList.add('high');
+            }
+            else if(countRightAnswers < (questions.length/4)){
+                correctAnsElem.classList.add('low');
+            }
+        
+        shareScore.classList.remove('hide');
+        correctAnsElem.classList.remove('hide');
+        correctAnsElem.innerHTML = 
         "Your score :  " + countRightAnswers + "/" + questions.length; // span will show the score
     }
-
-    if (selectedBtn.dataset = correct) {
-        countRightAnswers++;
-     // +1, change it if you need +10, +25 etc
-     }
 }
 
 function setStatusClass(element, correct) {
@@ -109,3 +125,16 @@ function clearStatusClass(element){
     element.classList.remove('wrong');
 }
 
+shareScore.addEventListener('click', event => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'WebShare API Demo',
+        url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+      .catch(console.error);
+    } else {
+      // fallback
+    }
+  });
