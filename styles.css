@@ -42,12 +42,13 @@ body.wrong{
 }
 
 .btn-grid{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: stretch; */
+    grid-template-columns: repeat(1, auto);
+    gap: 15px;
     margin: 20px 0;
 }
 
@@ -131,4 +132,10 @@ span#right-answers.low{
 
 .sharescore{
     cursor: pointer;
+}
+
+@media only screen and (min-width: 768px){
+    .btn-grid{
+        grid-template-columns: repeat(2, auto);
+    }
 }

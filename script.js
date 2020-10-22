@@ -41,6 +41,7 @@ function startGame() {
     correctAnsElem.classList.add('hide');
     correctAnsElem.classList.remove('high');
     correctAnsElem.classList.remove('low');
+    shareScore.classList.add('hide');
 
     setNextQuestion()
     
