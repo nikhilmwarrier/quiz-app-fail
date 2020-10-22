@@ -128,8 +128,8 @@ function clearStatusClass(element){
 shareScore.addEventListener('click', event => {
     if (navigator.share) {
       navigator.share({
-        title: 'WebShare API Demo',
-        url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+        title: document.title,
+        url: document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : document.location.href;
       }).then(() => {
         console.log('Thanks for sharing!');
       })
@@ -138,3 +138,5 @@ shareScore.addEventListener('click', event => {
       // fallback
     }
   });
+
+
