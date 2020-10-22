@@ -1,0 +1,39 @@
+{
+    "name": "SillyQuestions",
+    "short_name": "SQ",
+    "theme_color": "#8400ff",
+    "background_color": "#8400ff",
+    "display": "standalone",
+    "Scope": "/",
+    "start_url": "index.html",
+    "icons": [
+      
+      {
+        "src": "res/icon_144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      
+      {
+        "src": "res/icon_192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      
+      {
+        "src": "res/icon_512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable",
+        "purpose": "maskable"
+      },
+      {
+        "src": "res/maskable_icon.png",
+        "sizes": "787x787",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  }
