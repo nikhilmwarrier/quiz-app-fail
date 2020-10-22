@@ -46,6 +46,7 @@ body.wrong{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 10px;
     margin: 20px 0;
 }
@@ -59,10 +60,6 @@ body.wrong{
     color: black;
     outline: none;
     font-size: 1rem;
-
-    background: #f3f3f3;
-    box-shadow:  5px 5px 10px #e9e9e9, 
-                 -5px -5px 10px #fdfdfd;
     transition: 0.2s ease-in-out;
     background-color: hsl(var(--hue), 100%, 70%);
 }
@@ -130,4 +127,8 @@ span#right-answers.high{
 
 span#right-answers.low{
     --hue: var(--hue-wrong);
+}
+
+.sharescore{
+    cursor: pointer;
 }
