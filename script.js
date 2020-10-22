@@ -129,7 +129,7 @@ shareScore.addEventListener('click', event => {
     if (navigator.share) {
       navigator.share({
         title: document.title,
-        url: document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : document.location.href;
+        url: document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : document.location.href,
       }).then(() => {
         console.log('Thanks for sharing!');
       })
